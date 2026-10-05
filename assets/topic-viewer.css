@@ -109,3 +109,33 @@ ul{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:5px}li{max-
  .er-map{padding:12px}
  .er-canvas{min-width:760px;min-height:680px;transform-origin:top left}
 }
+
+/* Compact ER mind map */
+.er2{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px}
+.er2-grid{position:relative;display:grid;grid-template-columns:1fr 1.15fr 1fr;gap:14px 18px;align-items:start}
+.er2-svg{position:absolute;inset:0;width:100%;height:100%;z-index:1;pointer-events:none;overflow:visible}
+.er2-svg path{fill:none;stroke:var(--accent);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;opacity:.68}
+.er2-svg marker path{fill:var(--accent);stroke:none}
+.er2-node{position:relative;z-index:2;background:var(--surface);border:1.5px solid var(--accent);border-radius:10px;padding:10px 12px;font:600 13px/1.35 var(--f-body)}
+.er2-node h3{margin:0 0 6px;color:var(--accent);font:700 13px/1.25 var(--f-body)}
+.er2-node ul{font-size:12.5px;line-height:1.38;gap:3px}
+.er2-main{grid-column:2;grid-row:2;background:var(--accent);color:#fff;border-color:var(--accent);font-size:16px;font-weight:800;text-align:center;padding:15px}
+.er2-news{grid-column:2;grid-row:1}
+.er2-history{grid-column:1;grid-row:2 / span 2}
+.er2-ceremony{grid-column:3;grid-row:2}
+.er2-connected{grid-column:1;grid-row:4}
+.er2-pm{grid-column:3;grid-row:3}
+.er2-quiz{grid-column:2;grid-row:4;text-align:center}
+.er2-miniwrap{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:8px}
+.er2-mini{border:1px dashed var(--line);border-radius:7px;padding:6px 7px;font-size:11.5px;font-weight:600;background:var(--sunk)}
+.er2-rels{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px}
+.er2-rel{font:600 10px/1.2 var(--f-mono);color:var(--muted);background:var(--sunk);border:1px solid var(--line);border-radius:999px;padding:3px 6px}
+.er2-source{margin-top:10px;font-size:12.5px}
+.er2-source a{color:var(--accent);font-weight:600;text-decoration:none}
+.er2-source a:hover{text-decoration:underline}
+@media(max-width:760px){
+ .er2-grid{grid-template-columns:1fr;gap:10px}
+ .er2-news,.er2-history,.er2-main,.er2-ceremony,.er2-pm,.er2-connected,.er2-quiz{grid-column:1;grid-row:auto}
+ .er2-svg{display:none}
+ .er2-miniwrap{grid-template-columns:1fr}
+}
